@@ -11,8 +11,11 @@ class GildedRose
 
     # Code from Sandi Metz's solution in the Confreaks video,
     # and Jim Weirich provided the original code.
-    if name == 'Normal Item'
+    case name
+    when 'Normal Item'
       return normal_tick
+    when 'Aged Brie'
+      return brie_tick
     end
 
     if @name != "Aged Brie" and @name != "Backstage passes to a TAFKAL80ETC concert"
@@ -68,4 +71,8 @@ class GildedRose
     @quality -= 1
     @quality -= 1 if @days_remaining <= 0
   end
+end
+
+def brie_tick
+
 end
