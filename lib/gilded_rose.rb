@@ -8,6 +8,12 @@ class GildedRose
   end
 
   def tick
+
+    # Code from Sandi Metz's solution in the Confreaks video.
+    if name == 'normal'
+      return
+    end
+
     if @name != "Aged Brie" and @name != "Backstage passes to a TAFKAL80ETC concert"
       if @quality > 0
         if @name != "Sulfuras, Hand of Ragnaros"
