@@ -62,7 +62,12 @@ class GildedRose
   # Code from Sandi Metz's solution in the Confreaks video,
   # and Jim Weirich provided the original code.
   def normal_tick
-    @quality -= 1
+    if @days_remaining > 0
+      @quality -= 1
+    end
+    if @days_remaining <= 0
+      @quality -= 2
+    end
     @days_remaining -= 1
   end
 end
