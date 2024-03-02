@@ -12,7 +12,7 @@ class GildedRose
     # Code from Sandi Metz's solution in the Confreaks video,
     # and Jim Weirich provided the original code.
     if name == 'Normal item'
-      return #normal_tick
+      return normal_tick
     end
 
     if @name != "Aged Brie" and @name != "Backstage passes to a TAFKAL80ETC concert"
@@ -61,6 +61,6 @@ class GildedRose
   end
   # Code from Sandi Metz's solution in the Confreaks video,
   # and Jim Weirich provided the original code.
-  #def normal_tick
-  #end
+  def normal_tick
+  end
 end
