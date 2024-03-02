@@ -73,6 +73,12 @@ class GildedRose
   end
 end
 
+# Code from Sandi Metz's solution in the Confreaks video,
+# and Jim Weirich provided the original code.
 def brie_tick
+  @days_remaining -= 1
+  return if @quality == 50
 
+  @quality += 1
+  @quality += 1 if @days_remaining <= 0
 end
