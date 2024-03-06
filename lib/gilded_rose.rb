@@ -7,21 +7,15 @@ class GildedRose
     @quality = quality
   end
 
-  def normal_tick
-    @item = Normal.new(quality, days_remaining)
-    item.tick
-  end
-
-
-
-
+  
   def tick
 
     # Code from Sandi Metz's solution in the Confreaks video,
     # and Jim Weirich provided the original code.
     case name
     when 'Normal Item'
-      return normal_tick
+      @item = Normal.new(quality, days_remaining)
+      item.tick
     when 'Aged Brie'
       return brie_tick
     when 'Sulfuras, Hand of Ragnaros'
