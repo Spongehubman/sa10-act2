@@ -7,6 +7,14 @@ class GildedRose
     @quality = quality
   end
 
+  def normal_tick
+    @item = Normal.new(quality, days_remaining)
+    item.tick
+  end
+
+
+
+
   def tick
 
     # Code from Sandi Metz's solution in the Confreaks video,
