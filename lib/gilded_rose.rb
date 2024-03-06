@@ -6,23 +6,19 @@ class GildedRose
   end
 
 
-  def tick
+  def 
 
     # Code from Sandi Metz's solution in the Confreaks video,
     # and Jim Weirich provided the original code.
     case name
     when 'Normal Item'
-      @item = Normal.new(quality, days_remaining)
-      item.tick
+      Normal
     when 'Aged Brie'
-      @item = Brie.new(quality, days_remaining)
-      item.tick
+      Brie
     when 'Sulfuras, Hand of Ragnaros'
-      @item = Sulfuras.new(quality, days_remaining)
-      item.tick
+      Sulfuras
     when 'Backstage passes to a TAFKAL80ETC concert'
-      @item = Backstage.new(quality, days_remaining)
-      item.tick
+      Backstage
     end
 
   end
