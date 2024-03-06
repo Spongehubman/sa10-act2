@@ -23,6 +23,9 @@ class GildedRose
 
   end
   
+  def tick
+    item.tick
+  end
 
   # Code from Sandi Metz's solution in the Confreaks video,
   # and Jim Weirich provided the original code.
