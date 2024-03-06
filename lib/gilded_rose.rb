@@ -23,16 +23,8 @@ class GildedRose
     end
 
   end
-  # Code from Sandi Metz's solution in the Confreaks video,
-  # and Jim Weirich provided the original code.
-  def normal_tick
-    @days_remaining -= 1
-    return if @quality == 0
-
-    @quality -= 1
-    @quality -= 1 if @days_remaining <= 0
-  end
   
+
   # Code from Sandi Metz's solution in the Confreaks video,
   # and Jim Weirich provided the original code.
   def brie_tick
@@ -55,5 +47,20 @@ class GildedRose
     @quality += 1
     @quality += 1 if @days_remaining < 10
     @quality += 1 if @days_remaining < 5
+  end
+end
+
+class Normal
+
+
+
+# Code from Sandi Metz's solution in the Confreaks video,
+  # and Jim Weirich provided the original code.
+  def tick
+    @days_remaining -= 1
+    return if @quality == 0
+
+    @quality -= 1
+    @quality -= 1 if @days_remaining <= 0
   end
 end
