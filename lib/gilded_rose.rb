@@ -32,28 +32,28 @@ class GildedRose
     @quality -= 1
     @quality -= 1 if @days_remaining <= 0
   end
-end
+  
+  # Code from Sandi Metz's solution in the Confreaks video,
+  # and Jim Weirich provided the original code.
+  def brie_tick
+    @days_remaining -= 1
+    return if @quality >= 50
 
-# Code from Sandi Metz's solution in the Confreaks video,
-# and Jim Weirich provided the original code.
-def brie_tick
-  @days_remaining -= 1
-  return if @quality >= 50
+    @quality += 1
+    @quality += 1 if @days_remaining <= 0 && @quality < 50
+  end
 
-  @quality += 1
-  @quality += 1 if @days_remaining <= 0 && @quality < 50
-end
+  def sulfuras_tick
 
-def sulfuras_tick
+  end
 
-end
+  def backstage_tick
+    @days_remaining -= 1
+    return              if @quality >= 50
+    return @quality = 0 if @days_remaining < 0
 
-def backstage_tick
-  @days_remaining -= 1
-  return              if @quality >= 50
-  return @quality = 0 if @days_remaining < 0
-
-  @quality += 1
-  @quality += 1 if @days_remaining < 10
-  @quality += 1 if @days_remaining < 5
+    @quality += 1
+    @quality += 1 if @days_remaining < 10
+    @quality += 1 if @days_remaining < 5
+  end
 end
