@@ -1,12 +1,12 @@
 class GildedRose
-  attr_reader :name, :days_remaining, :quality
+  attr_reader :item
 
   def initialize(name:, quality:, days_remaining:)
-    @item = ???.new(quality, days_remaining)
+    @item = klass_for(name).new(quality, days_remaining)
   end
 
 
-  def 
+  def klass_for(name)
 
     # Code from Sandi Metz's solution in the Confreaks video,
     # and Jim Weirich provided the original code.
