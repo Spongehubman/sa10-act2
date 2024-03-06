@@ -51,10 +51,13 @@ class GildedRose
 end
 
 class Normal
+attr_reader :quality, :days_remaining
 
+def initialize(quality, days_remaining)
+  @quality, @days_remaining = quality, days_remaining
+end
 
-
-# Code from Sandi Metz's solution in the Confreaks video,
+  # Code from Sandi Metz's solution in the Confreaks video,
   # and Jim Weirich provided the original code.
   def tick
     @days_remaining -= 1
