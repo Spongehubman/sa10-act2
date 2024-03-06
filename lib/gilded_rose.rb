@@ -30,13 +30,11 @@ class GildedRose
   # Code from Sandi Metz's solution in the Confreaks video,
   # and Jim Weirich provided the original code.
   def quality
-    return item.quality if item
-    @quality
+    item.quality
   end
 
   def days_remaining
-    return item.days_remaining if item
-    @days_remaining
+    item.days_remaining
   end
 end
 
