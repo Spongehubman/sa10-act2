@@ -1,12 +1,10 @@
 module GildedRose
-  attr_reader :item
-
   def self.new(name:, quality:, days_remaining:)
-    @item = klass_for(name).new(quality, days_remaining)
+    klass_for(name).new(quality, days_remaining)
   end
 
 
-  def klass_for(name)
+  def self.klass_for(name)
 
     # Code from Sandi Metz's solution in the Confreaks video,
     # and Jim Weirich provided the original code.
