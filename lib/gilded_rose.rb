@@ -1,31 +1,41 @@
 module GildedRose
+
+  DEFAULT_CLASS = Item
+  SPECIALIZED_CLASSES = {
+    'Normal Item'                               => Normal,
+    'Aged Brie'                                 => Brie,
+    'Backstage passes to a TAFKAL80ETC concert' => Backstage}
+
   def self.new(name:, quality:, days_remaining:)
-    klass_for(name).new(quality, days_remaining)
-  end
-
-
-  def self.klass_for(name)
-
-    # Code from Sandi Metz's solution in the Confreaks video,
-    # and Jim Weirich provided the original code.
-    case name
-    when 'Normal Item'
-      Normal
-    when 'Aged Brie'
-      Brie
-    when 'Sulfuras, Hand of Ragnaros'
-      Item
-    when 'Backstage passes to a TAFKAL80ETC concert'
-      Backstage
-    end
-
+    (SPECIALIZED_CLASSES[name] || DEFAULT_CLASS).
+      new(quality, days_remaining)
   end
 
   class Item
     def tick
     end
   end
+
+  class Normal < Item
+    def tick
+      @days_remaining -= 1
+      return if @quality == 0
     
+      @quality -= 1
+      @quality -= 1 if @days_remaining <= 0
+    end
+  end
+
+  class Brie < Item
+    def tick
+      @days_remaining -= 1
+      return if @quality >= 50
+    
+      @quality += 1
+      @quality += 1 if @days_remaining <= 0 && @quality < 50
+    end
+  end
+
   class Backstage < Item
     def tick
       @days_remaining -= 1
