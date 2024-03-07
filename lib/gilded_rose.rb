@@ -27,6 +27,9 @@ module GildedRose
     def initialize(quality, days_remaining)
       @quality, @days_remaining = quality, days_remaining
     end
+
+    def tick
+    end
   end
 
   class Normal < Item
