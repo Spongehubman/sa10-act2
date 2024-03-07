@@ -14,7 +14,7 @@ module GildedRose
     when 'Aged Brie'
       Brie
     when 'Sulfuras, Hand of Ragnaros'
-      Sulfuras
+      Item
     when 'Backstage passes to a TAFKAL80ETC concert'
       Backstage
     end
@@ -22,11 +22,6 @@ module GildedRose
   end
 
   class Item
-    def tick
-    end
-  end
-    
-  class Sulfuras < Item
     def tick
     end
   end
