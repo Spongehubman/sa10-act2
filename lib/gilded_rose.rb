@@ -20,20 +20,6 @@ module GildedRose
     end
 
   end
-  
-  def tick
-    item.tick
-  end
-
-  # Code from Sandi Metz's solution in the Confreaks video,
-  # and Jim Weirich provided the original code.
-  def quality
-    item.quality
-  end
-
-  def days_remaining
-    item.days_remaining
-  end
 
   class Normal
     attr_reader :quality, :days_remaining
