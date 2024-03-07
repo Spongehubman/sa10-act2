@@ -1,7 +1,7 @@
-class GildedRose
+module GildedRose
   attr_reader :item
 
-  def initialize(name:, quality:, days_remaining:)
+  def self.new(name:, quality:, days_remaining:)
     @item = klass_for(name).new(quality, days_remaining)
   end
 
