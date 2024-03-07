@@ -21,13 +21,15 @@ module GildedRose
 
   end
 
-  class Normal
+  class Item
     attr_reader :quality, :days_remaining
     
     def initialize(quality, days_remaining)
       @quality, @days_remaining = quality, days_remaining
     end
-    
+  end
+
+  class Normal < Item
     # Code from Sandi Metz's solution in the Confreaks video,
     # and Jim Weirich provided the original code.
     def tick
@@ -38,14 +40,8 @@ module GildedRose
       @quality -= 1 if @days_remaining <= 0
     end
   end
-    
-  class Brie
-    attr_reader :quality, :days_remaining
-    
-    def initialize(quality, days_remaining)
-      @quality, @days_remaining = quality, days_remaining
-    end
-    
+
+  class Brie < Item
     # Code from Sandi Metz's solution in the Confreaks video,
     # and Jim Weirich provided the original code.
     def tick
@@ -57,24 +53,12 @@ module GildedRose
     end
   end
     
-  class Sulfuras
-    attr_reader :quality, :days_remaining
-    
-    def initialize
-      @quality, @days_remaining = quality, days_remaining
-    end
-    
+  class Sulfuras < Item
     def tick
     end
   end
     
-  class Backstage
-    attr_reader :quality, :days_remaining
-    
-    def initialize
-      @quality, @days_remaining = quality, days_remaining
-    end
-    
+  class Backstage < Item
     def tick
       @days_remaining -= 1
       return              if @quality >= 50
